@@ -4,34 +4,90 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Pythonautas Launchpad</title>
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site" role="banner">
       <div class="container">
-        <a class="brand" href="index.html" aria-label="Pythonautas Launchpad">
-          <img class="logo" src="/assets/logo.svg" alt="" width="120" height="120" />
+        <a class="brand" href="index.html" aria-label="Início - Pythonautas Launchpad">
+          <img class="logo" src="assets/logo.svg" alt="Pythonautas Launchpad" />
           <div class="brand-text">
             <strong class="title">Pythonautas Launchpad</strong>
-            <span class="tagline">Painel de tarefas & controle de missões</span>
+            <span class="tagline">PAINEL DE TAREFAS &amp; CONTROLE DE MISSÕES</span>
           </div>
         </a>
+        <nav aria-label="primária">
+          <ul class="nav">
+            <li><a href="novo-usuario.html">Registre-se</a></li>
+            <li><a href="index.html" aria-current="page">Entrar</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
 
+    <!-- CONTEÚDO -->
     <main id="conteudo" class="site-main">
       <div class="container">
-        <!-- CONTEÚDO ESPECÍFICO DA PÁGINA -->
+        <section class="card card--home" aria-label="Acessar ou criar conta">
+          <!-- Coluna esquerda: formulário -->
+          <div class="card-col card-col--form">
+            <h1>Bem-vindo(a)!</h1>
+
+            <form action="dashboard.html" method="get" novalidate>
+              <div class="field">
+                <label for="usuario" class="sr-only">Usuário</label>
+                <input
+                  type="text"
+                  id="usuario"
+                  name="usuario"
+                  placeholder="usuário ou email"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="senha" class="sr-only">Senha</label>
+                <input
+                  type="password"
+                  id="senha"
+                  name="senha"
+                  placeholder="senha"
+                  required
+                />
+              </div>
+
+              <div class="helper">
+                <label><input type="checkbox" /> Lembrar-se</label>
+                <a href="#">Esqueceu a senha?</a>
+              </div>
+
+              <div class="actions">
+                <button type="submit" class="btn primary">Entrar</button>
+              </div>
+            </form>
+
+            <div class="divider" role="presentation"></div>
+
+            <h2>Primeira vez por aqui?</h2>
+            <form action="novo-usuario.html" method="get">
+              <button type="submit" class="btn secondary">Registre-se</button>
+            </form>
+          </div>
+
+          <!-- Coluna direita: ilustração -->
+          <div class="card-col card-col--side" aria-hidden="true">
+            <figure>
+              <img src="assets/launchpad-illustration.svg" alt="" />
+            </figure>
+          </div>
+        </section>
       </div>
     </main>
 
     <footer class="site" role="contentinfo">
       <div class="container">
-        <p>
-          © 2025 <a href="https://github.com/falk-dev/projeto-v-globotech" target="_blank" rel="noopener">Pythonautas — 
-          Academia Globotech</a>
-        </p>
+        <p>© 2025 <a href="https://github.com/falk-dev/projeto-v-globotech" target="_blank" rel="noopener">Pythonautas — Academia Globotech</a></p>
       </div>
     </footer>
   </body>
