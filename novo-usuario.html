@@ -6,6 +6,40 @@
     <title>Pythonautas Launchpad</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
+      <style>
+        /* Estilos adicionais para melhorar a validação */
+        .field-hint {
+            font-size: 0.75rem;
+            color: #6b6f76;
+            margin-top: 0.25rem;
+            display: block;
+        }
+        
+        input:invalid {
+            border-color: #ff4444;
+        }
+        
+        input:valid {
+            border-color: #00C851;
+        }
+        
+        .error-message {
+            color: #ff4444;
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        
+        .field {
+            margin-bottom: 1.2rem;
+        }
+        .btn-group {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            background:var(--purple); color:#fff;
+        }
+    </style>
   </head>
   <body>
     <header class="site" role="banner">
@@ -27,9 +61,69 @@
     </header>
 
     <main id="conteudo" class="site-main">
-      <div class="container">
-        <h1>Criar Usuário</h1>
-        <!-- CONTEÚDO ESPECÍFICO DA PÁGINA -->
+<div class="container">
+        <section class="card" aria-label="Criar conta">
+          <div class="card-col card-col--form">
+            <h1>Criar conta</h1>
+            
+                        <!-- Formulário com action apontando para dashboard.html -->
+            <form id="form-criar-conta" action="dashboard.html" novalidate>
+              <div class="field">
+                <label for="nome">Nome completo *</label>
+                <input type="text" id="nome" name="nome" placeholder="Nome e Sobrenome" 
+                      required minlength="5" 
+                      title="Mínimo 5 caracteres">
+                <div class="field-hint">Mínimo 5 caracteres</div>
+                <div class="error-message" id="nome-error"></div>
+              </div>
+              
+              <div class="field">
+                <label for="usuario">Usuário *</label>
+                <input type="text" id="usuario" name="usuario" placeholder="usuario" 
+                      required pattern="[A-Za-z0-9_]{4,20}" 
+                      title="Mínimo 4 caracteres, máximo 20. Use apenas letras, números e underscore">
+                <div class="field-hint">4-20 caracteres (letras, números e _)</div>
+                <div class="error-message" id="usuario-error"></div>
+              </div>
+              
+              <div class="field">
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" placeholder="email@exemplo.com" required>
+                <div class="field-hint">Digite um e-mail válido</div>
+                <div class="error-message" id="email-error"></div>
+              </div>
+              
+              <div class="field">
+                <label for="senha">Senha *</label>
+                <input type="password" id="senha" name="senha" placeholder="******" 
+                      required minlength="6" 
+                      title="Mínimo 6 caracteres">
+                <div class="field-hint">Mínimo 6 caracteres</div>
+                <div class="error-message" id="senha-error"></div>
+              </div>
+              
+              <div class="field">
+                <label for="confirmar">Confirmar senha *</label>
+                <input type="password" id="confirmar" name="confirmar" placeholder="******" required>
+                <div class="field-hint">Digite a mesma senha novamente</div>
+                <div class="error-message" id="confirmar-error"></div>
+              </div>
+              
+              <div class="helper">
+                <label><input type="checkbox" id="termos" name="termos" required /> Aceito os <a href="#">termos de uso</a></label>
+              </div>
+              
+              <div class="actions">
+                <button type="submit" class="btn primary">Criar conta</button>
+              </div>
+            </form>
+            <div class="actions">
+              <form action="index.html" method="get">
+                <button type="submit" class="btn secondary">Cancelar</button>
+              </form>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
 
