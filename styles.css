@@ -256,3 +256,21 @@ footer.site a{ color:#6a6ee6; }
   background-position: center;
   background-size: .8rem .8rem;
 }
+
+
+/* Estilização da Página lista.html */
+.card__button {
+  background: var(--purple);
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0.85rem 1rem;
+  border-radius: 0.8rem;
+  width: 100%;
+  border: 0;
+}
+
+.card__button:hover {
+  text-decoration: none;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
