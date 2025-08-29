@@ -477,8 +477,16 @@ footer.site a {
 .card--list {
   display: grid;
   grid-template-columns: 1fr 0.4fr;
+  grid-template-areas:
+    "content button"
+    "tasks tasks";
+  grid-template-rows: auto;
   align-items: start;
   gap: 3rem;
+}
+
+.card__content {
+  grid-area: content;
 }
 
 .card__button {
@@ -497,12 +505,70 @@ footer.site a {
   font-weight: 600;
   font-size: 0.85rem;
   transition: box-shadow 0.2s ease;
+  grid-area: button;
+}
+
+.card__tasks {
+  grid-area: tasks;
+  padding-inline-start: 0;
+}
+
+.card__task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  border: 1px solid #6b6f76;
+  padding: 0.5rem 0.8em 0.5em 0.5em;
+  border-radius: 0.7em;
+  margin-bottom: 0.5em;
+}
+
+.card__task-info {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.card__task-info input[type="checkbox"] {
+  margin-right: 0.7rem;
+}
+
+.card__name::after {
+  content: " |";
+}
+
+.card__owner::before {
+  content: "• ";
+}
+
+.card__owner,
+.card__deadline {
+  color: #7b7b85;
+}
+
+.card__name,
+.card__owner,
+.card__deadline {
+  margin-right: 0.3em;
+}
+
+.card__task-action {
+  gap: 1em;
+  display: flex;
 }
 
 .card__button:hover {
   text-decoration: none;
   color: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+input[type="checkbox"] {
+  border: 0px;
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
 }
 
 .card__header {
@@ -516,6 +582,10 @@ footer.site a {
   padding: 0.1rem 1.5rem;
   border-radius: 5px;
   color: #fff;
+  width: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card__label--low {
