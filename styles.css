@@ -667,5 +667,94 @@ body .panel--dashboard .dashboard-lists .card.dashboard-list-card > .btn.seconda
   .legend__list{ gap:8px 14px; font-size:.84rem; }
   .legend__badge{ min-width:62px; height:24px; padding:0 8px; font-size:.78rem; }
 }
+/* limita e centraliza o “quadrado” dos cards */
+.site-main .container,
+.panel--dashboard{
+  width: min(100%, 1100px);
+  margin-inline: auto;
+}
 
+/* título + descrição + “CRIAR LISTA” sempre centralizados */
+.dashboard-toolbar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+.dashboard-toolbar .btn.primary{          /* seu botão roxinho */
+  align-self: center;
+}
+
+/* grade dos cards centralizada e com cartões com largura “bonita” */
+.dashboard-lists{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  justify-items: center;                  /* card no meio da coluna */
+}
+.dashboard-lists .card{
+  width: 100%;
+  max-width: 360px;                       /* não estica demais */
+}
+
+/* “VER LISTA” no centro do card, sempre */
+.card .btn.secondary{
+  display: block;
+  margin: 14px auto 0;
+}
+
+/* legenda centralizada abaixo dos cards */
+.legend{ margin-top: 18px; }
+.legend .legend_list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px 28px;
+  flex-wrap: wrap;
+}
+
+/* rodapé centralizado (só ele) */
+footer.site .container{ text-align: center; }
+
+/* ajustes extra pra telas bem estreitas (ex.: 320px) */
+@media (max-width: 420px){
+  .site-main .container,
+  .panel--dashboard{ padding-inline: 16px; }
+  .dashboard-lists{ grid-template-columns: 1fr; gap: 16px; }
+  .dashboard-lists .card{ max-width: 420px; }
+  .legend .legend_list{ gap: 10px 16px; }
+}
+/* mobile: legenda alinhada à esquerda */
+@media (max-width: 480px) {
+  /* container da legenda */
+  .legend, .Legend {
+    margin-top: 12px;
+  }
+
+  /* a lista da legenda fica colada à esquerda */
+  .legend__list, .Legend__List {
+    justify-content: flex-start;   /* sai do centro */
+    align-items: flex-start;
+    text-align: left;
+    gap: 8px 12px;                  /* um respiro menor no mobile */
+  }
+
+  /* cada item ocupa a linha toda e alinha conteúdo à esquerda */
+  .legend__item, .Legend__item {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  /* chip com um espacinho do texto */
+  .legend__badge, .Legend__badge {
+    margin-right: 10px;
+  }
+
+  /* texto realmente à esquerda e podendo quebrar linha */
+  .legend__text, .Legend__Text, .Legend__text {
+    text-align: left;
+    white-space: normal;            /* permite quebra de linha */
+  }
+}
 /*========================================================================================================================*/
