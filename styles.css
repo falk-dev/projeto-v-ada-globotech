@@ -484,12 +484,21 @@ footer.site a {
   align-items: start;
   gap: 3rem;
 }
+#conteudo {
+  position: relative;
+}
 
 .card__content {
   grid-area: content;
+  max-width: 100%;
+}
+
+.card__actions {
+  max-width: 100%;
 }
 
 .card__button {
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -511,6 +520,7 @@ footer.site a {
 .card__tasks {
   grid-area: tasks;
   padding-inline-start: 0;
+  max-width: 100%;
 }
 
 .card__task {
@@ -522,12 +532,14 @@ footer.site a {
   padding: 0.5rem 0.8em 0.5em 0.5em;
   border-radius: 0.7em;
   margin-bottom: 0.5em;
+  max-width: 100%;
 }
 
 .card__task-info {
   display: flex;
   justify-content: start;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .card__task-info input[type="checkbox"] {
@@ -575,6 +587,7 @@ input[type="checkbox"] {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  max-width: 100%;
 }
 
 .card__label {
@@ -614,10 +627,32 @@ input[type="checkbox"] {
 }
 
 @media (max-width: 767px) {
+  .card {
+    padding: 2rem;
+  }
   .card__header {
     display: flex;
     flex-direction: column-reverse;
     align-items: flex-start;
+  }
+
+  .card--list {
+    grid-template-areas:
+      "content"
+      "button"
+      "tasks";
+  }
+
+  .card__name::after {
+    content: "";
+  }
+
+  .card__owner::before {
+    content: "";
+  }
+
+  .card__task-info {
+    width: 50%;
   }
 }
 
