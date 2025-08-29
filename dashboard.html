@@ -4,12 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Minhas Listas — Pythonautas Launchpad</title>
-
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="dashboard.css" />
 </head>
 <body>
 
+  <!-- HEADER GLOBAL -->
   <header class="site" role="banner">
     <div class="container">
       <a class="brand" href="index.html" aria-label="Página inicial — Pythonautas Launchpad">
@@ -19,11 +20,9 @@
           <span class="tagline">PAINEL DE TAREFAS &amp; CONTROLE DE MISSÕES</span>
         </div>
       </a>
-
       <nav aria-label="Menu principal">
-
         <ul class="navv">
-          <li><a href="index.html">Sair</a></li>
+          <li><a href="index.html">SAIR</a></li>
         </ul>
       </nav>
     </div>
@@ -32,76 +31,164 @@
   <main id="conteudo" class="site-main">
     <div class="container">
 
-      <section class="dashboard-header">
-        <h1>Minhas listas</h1>
-        <h3>Gerencie suas listas de tarefas.</h3>
+      <section class="panel panel--dashboard">
+        <div class="dashboard-toolbar">
+          <div>
+            <h1>Minhas Listas</h1>
+            <p class="subtitle">Gerencie suas listas de tarefas.</p>
+          </div>
+          <a class="btn primary" href="nova-lista.html">CRIAR LISTA</a>
+        </div>
+
+        <section class="dashboard-lists" aria-label="Listas de tarefas">
+
+          <!-- PROJETOS -->
+          <article class="card dashboard-list-card"
+                   data-total="12" data-pendentes="3" data-concluidas="9" data-prioridade="baixa">
+            <span class="badge badge--prio badge--baixa">Baixa</span>
+            <h2 class="dashboard-list-card__title">
+              <a href="lista.html">Projeto I - Introdução a Python</a>
+            </h2>
+            <div class="badges-inline">
+              <a class="meta-link" href="lista.html#todas"><strong>12</strong> tarefas</a>
+              <span class="dot">·</span>
+              <a class="meta-link" href="lista.html#pendentes"><strong>3</strong> pendentes</a>
+              <span class="dot">·</span>
+              <a class="meta-link" href="lista.html#concluidas"><strong>9</strong> concluídas</a>
+            </div>
+            <p class="dashboard-list-card__desc">
+              Pipeline em Python com estruturas condicionais simples e CSV em memória.
+            </p>
+            <a class="btn secondary" href="lista.html">VER LISTA</a>
+          </article>
+
+          <article class="card dashboard-list-card"
+                   data-total="18" data-pendentes="0" data-concluidas="18" data-prioridade="baixa">
+            <span class="badge badge--prio badge--baixa">Baixa</span>
+            <h2 class="dashboard-list-card__title">
+              <a href="lista.html">Projeto II - Programação Orientada a Objetos</a>
+            </h2>
+            <div class="badges-inline">
+              <a class="meta-link" href="lista.html#todas"><strong>18</strong> tarefas</a>
+              <span class="dot">·</span>
+              <a class="meta-link" href="lista.html#pendentes"><strong>0</strong> pendentes</a>
+              <span class="dot">·</span>
+              <a class="meta-link" href="lista.html#concluidas"><strong>18</strong> concluídas</a>
+            </div>
+            <p class="dashboard-list-card__desc">
+              Foco em POO, classes e na criação de funções mais complexas.
+            </p>
+            <a class="btn secondary" href="lista.html">VER LISTA</a>
+          </article>
+
+          <article class="card dashboard-list-card"
+                   data-total="9" data-pendentes="1" data-concluidas="8" data-prioridade="media">
+            <span class="badge badge--prio badge--media">Média</span>
+            <h2 class="dashboard-list-card__title">
+              <a href="lista.html">Projeto III - Algoritmos e Estruturas</a>
+            </h2>
+            <div class="badges-inline">
+              <a class="meta-link" href="lista.html#todas"><strong>9</strong> tarefas</a>
+              <span class="dot">·</span>
+              <a class="meta-link" href="lista.html#pendentes"><strong>1</strong> pendente</a>
+              <span class="dot">·</span>
+              <a class="meta-link" href="lista.html#concluidas"><strong>8</strong> concluídas</a>
+            </div>
+            <p class="dashboard-list-card__desc">
+              Implementação de fila, árvore de busca, ordenação e complexidade.
+            </p>
+            <a class="btn secondary" href="lista.html">VER LISTA</a>
+          </article>
+
+          <article class="card dashboard-list-card"
+                   data-total="12" data-pendentes="3" data-concluidas="9" data-prioridade="alta">
+            <span class="badge badge--prio badge--alta">Alta</span>
+            <h2 class="dashboard-list-card__title">
+              <a href="lista.html">Projeto IV - Banco de Dados</a>
+            </h2>
+            <div class="badges-inline">
+              <a class="meta-link" href="lista.html#todas"><strong>12</strong> tarefas</a>
+              <span class="dot">·</span>
+              <a class="meta-link" href="lista.html#pendentes"><strong>3</strong> pendentes</a>
+              <span class="dot">·</span>
+              <a class="meta-link" href="lista.html#concluidas"><strong>9</strong> concluídas</a>
+            </div>
+            <p class="dashboard-list-card__desc">
+              Modelagem de dados (MER/DER), SQL com SGBDs e persistência relacional.
+            </p>
+            <a class="btn secondary" href="lista.html">VER LISTA</a>
+          </article>
+
+          <article class="card dashboard-list-card"
+                   data-total="10" data-pendentes="8" data-concluidas="2" data-prioridade="media">
+            <span class="badge badge--prio badge--media">Média</span>
+            <h2 class="dashboard-list-card__title">
+              <a href="lista.html">Projeto V - Front-end Estático</a>
+            </h2>
+            <div class="badges-inline">
+              <a class="meta-link" href="lista.html#todas"><strong>10</strong> tarefas</a>
+              <span class="dot">·</span>
+              <a class="meta-link" href="lista.html#pendentes"><strong>8</strong> pendentes</a>
+              <span class="dot">·</span>
+              <a class="meta-link" href="lista.html#concluidas"><strong>2</strong> concluídas</a>
+            </div>
+            <p class="dashboard-list-card__desc">
+              Aplicação de conceitos de HTML5 e CSS3 na construção de páginas web.
+            </p>
+            <a class="btn secondary" href="lista.html">VER LISTA</a>
+          </article>
+
+          <article class="card dashboard-list-card"
+                   data-total="8" data-pendentes="2" data-concluidas="6" data-prioridade="media">
+            <span class="badge badge--prio badge--media">Média</span>
+            <h2 class="dashboard-list-card__title">
+              <a href="lista.html">Projeto VI - Integração &amp; Deploy</a>
+            </h2>
+            <div class="badges-inline">
+              <a class="meta-link" href="lista.html#todas"><strong>8</strong> tarefas</a>
+              <span class="dot">·</span>
+              <a class="meta-link" href="lista.html#pendentes"><strong>2</strong> pendentes</a>
+              <span class="dot">·</span>
+              <a class="meta-link" href="lista.html#concluidas"><strong>6</strong> concluídas</a>
+            </div>
+            <p class="dashboard-list-card__desc">
+              Automação de build, versionamento e publicação contínua.
+            </p>
+            <a class="btn secondary" href="lista.html">VER LISTA</a>
+          </article>
+          <!-- /PROJETOS -->
+
+        </section>
+
+
+          <!-- legenda (fica DEPOIS dos cards) -->
+          <section class="legend" aria-label="Legenda de prioridades">
+            <ul class="legend__list" role="list">
+              <li class="legend__item" role="listitem">
+                <span class="legend__badge legend__badge--alta">Alta</span>
+                <span class="legend__text">Prioridade alta = executar primeiro</span>
+              </li>
+              <li class="legend__item" role="listitem">
+                <span class="legend__badge legend__badge--media">Média</span>
+                <span class="legend__text">Prioridade média = tratar em breve</span>
+              </li>
+              <li class="legend__item" role="listitem">
+                <span class="legend__badge legend__badge--baixa">Baixa</span>
+                <span class="legend__text">Prioridade baixa = pode aguardar</span>
+              </li>
+            </ul>
+          </section>
+        </section>
+      
       </section>
 
-      <div class="dashboard-actions">
-        <a class="btn primary dashboard-actions__btn" href="nova-lista.html">Nova lista</a>
-      </div>
-
-      <!-- Grade de cards (DUPLIQUE <article> para novas listas) -->
-      <section class="dashboard-lists" aria-label="Listas de tarefas">
-
-        <!-- CARD 1 -->
-        <article class="card dashboard-list-card"
-                 data-total="4" data-pendentes="1" data-concluidas="3" data-prioridade="media">
-          <h2 class="dashboard-list-card__title">
-            <a href="lista.html">Compras</a>
-          </h2>
-
-          <div class="dashboard-list-card__badges">
-            <span class="badge badge--total">4 tarefas</span>
-            <span class="badge badge--pendentes">1 pendente</span>
-            <span class="badge badge--concluidas">3 concluídas</span>
-          </div>
-
-          <p class="dashboard-list-card__desc">Itens necessários para o escritório.</p>
-          <a class="btn secondary" href="lista.html">Ver lista</a>
-        </article>
-
-        <!-- CARD 2 -->
-        <article class="card dashboard-list-card"
-                 data-total="2" data-pendentes="1" data-concluidas="1" data-prioridade="baixa">
-          <h2 class="dashboard-list-card__title">
-            <a href="lista.html">Leituras</a>
-          </h2>
-
-          <div class="dashboard-list-card__badges">
-            <span class="badge badge--total">2 tarefas</span>
-            <span class="badge badge--pendentes">1 pendente</span>
-            <span class="badge badge--concluidas">1 concluída</span>
-          </div>
-
-          <p class="dashboard-list-card__desc">Artigos sobre desenvolvimento de software.</p>
-          <a class="btn secondary" href="lista.html">Ver lista</a>
-        </article>
-
-        <!-- CARD 3 -->
-        <article class="card dashboard-list-card"
-                 data-total="6" data-pendentes="4" data-concluidas="2" data-prioridade="alta">
-          <h2 class="dashboard-list-card__title">
-            <a href="lista.html">Projeto V — Python</a>
-          </h2>
-
-          <div class="dashboard-list-card__badges">
-            <span class="badge badge--total">6 tarefas</span>
-            <span class="badge badge--pendentes">4 pendentes</span>
-            <span class="badge badge--concluidas">2 concluídas</span>
-          </div>
-
-          <p class="dashboard-list-card__desc">Pipeline em Python com condicionais e CSV em memória.</p>
-          <a class="btn secondary" href="lista.html">Ver lista</a>
-        </article>
-
-      </section>
     </div>
   </main>
 
+  <!-- FOOTER GLOBAL -->
   <footer class="site" role="contentinfo">
     <div class="container">
-      <p>© 2025 <a href="https://github.com/falk-dev/projeto-v-globotech" target="_blank" rel="noopener">Pythonautas — Academia Globotech</a></p>
+      <p>© 2025 <a class="brand-link" href="https://github.com/falk-dev/projeto-v-globotech" target="_blank" rel="noopener">Pythonautas — Academia Globotech</a></p>
     </div>
   </footer>
 
