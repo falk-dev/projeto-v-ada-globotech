@@ -1,130 +1,114 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Adicionar Tarefa — Pythonautas Launchpad</title>
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site" role="banner">
-      <div class="container">
-        <a class="brand" href="index.html" aria-label="Pythonautas Launchpad">
-          <img class="logo" src="assets/logo.svg" alt="Pythonautas Launchpad" />
-          <div class="brand-text">
-            <strong class="title">Pythonautas Launchpad</strong>
-            <span class="tagline">PAINEL DE TAREFAS &amp; CONTROLE DE MISSÕES</span>
-          </div>
-        </a>
-        <nav aria-label="primária">
-          <ul class="nav">
-            <li><a href="novo-usuario.html">Minhas Listas</a></li>
-            <li><a href="index.html">Sair</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adicionar Tarefa — Pythonautas Launchpad</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-    <main id="conteudo" class="site-main">
-      <div class="container">
+  <!-- header global que você já usa -->
+  <header class="site" role="banner">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Página inicial — Pythonautas Launchpad">
+        <img class="logo" src="assets/logo.svg" alt="Pythonautas Launchpad" />
+        <div class="brand-text">
+          <strong class="title">Pythonautas Launchpad</strong>
+          <span class="tagline">PAINEL DE TAREFAS &amp; CONTROLE DE MISSÕES</span>
+        </div>
+      </a>
+
+      <nav aria-label="primária">
+        <ul class="nav">
+          <li><a href="dashboard.html">Minhas Listas</a></li>
+          <li><a href="index.html">Sair</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- conteúdo da página de nova tarefa -->
+  <main id="conteudo" class="site-main task-page">
+    <div class="container">
+
+      <header class="task-header">
         <h1>Adicionar Tarefa</h1>
-        <p class="page-subtitle">Preencha os campos abaixo para criar uma nova tarefa e adicioná-la a uma lista.</p>
+        <p class="page-subtitle">Preencha os campos para criar uma nova tarefa.</p>
+      </header>
 
-        <nav class="breadcrumbs" aria-label="caminho">
-          <ol>
-            <li><a href="usuario.html">Minhas Listas</a></li>
-            <li><a href="lista.html">Lista Selecionada</a></li>
-            <li aria-current="page">Nova Tarefa</li>
-          </ol>
-        </nav>
+      <section class="form-card" role="region" aria-labelledby="titulo-form">
+        <h2 id="titulo-form" class="sr-only">Formulário</h2>
 
-        <!-- Card conforme styles.css -->
-        <section class="card" role="region" aria-labelledby="titulo-form">
-          <div class="card-col--form">
-            <h2 id="titulo-form" class="sr-only">Formulário de nova tarefa</h2>
-
-            <!-- Form alinhado ao styles.css: .field, .helper, .actions, .btn -->
-            <form action="lista.html" method="post" novalidate>
-              <!-- Lista destino -->
-              <div class="field">
-                <label class="sr-only" for="lista">Lista destino</label>
-                <select id="lista" name="lista" required aria-label="Lista destino">
-                  <option value="" disabled selected>Selecione uma lista</option>
-                  <option value="missao-aprendizado">Missão: Aprendizado</option>
-                  <option value="trabalho">Trabalho</option>
-                  <option value="pessoal">Pessoal</option>
-                </select>
-                <div class="helper">
-                  <small>Obrigatório: escolha a lista onde a tarefa será adicionada.</small>
-                </div>
-              </div>
-
-              <!-- Título da tarefa -->
-              <div class="field">
-                <label class="sr-only" for="titulo">Título da tarefa</label>
-                <input id="titulo" name="titulo" type="text" placeholder="Ex.: Implementar endpoint de ranking" required maxlength="120" />
-                <div class="helper">
-                  <small>Até 120 caracteres.</small>
-                </div>
-              </div>
-
-              <!-- Descrição -->
-              <div class="field">
-                <label class="sr-only" for="descricao">Descrição</label>
-                <textarea id="descricao" name="descricao" rows="5" placeholder="Detalhes, critérios de aceitação, links, etc."></textarea>
-              </div>
-
-              <!-- Prioridade -->
-              <div class="field">
-                <label class="sr-only" for="prioridade">Prioridade</label>
-                <select id="prioridade" name="prioridade" aria-label="Prioridade">
-                  <option value="alta">Alta</option>
-                  <option value="media" selected>Média</option>
-                  <option value="baixa">Baixa</option>
-                </select>
-              </div>
-
-              <!-- Data limite -->
-              <div class="field">
-                <label class="sr-only" for="dataLimite">Data limite</label>
-                <input id="dataLimite" name="dataLimite" type="date" />
-              </div>
-
-              <!-- Tags -->
-              <div class="field">
-                <label class="sr-only" for="tags">Tags</label>
-                <input id="tags" name="tags" type="text" placeholder="Ex.: backend, spring, bugfix" />
-                <div class="helper">
-                  <small>Separe por vírgulas.</small>
-                </div>
-              </div>
-
-              <!-- Marcar como concluída -->
-              <div class="helper">
-                <label for="concluida">
-                  <input id="concluida" name="concluida" type="checkbox" />
-                  Marcar como concluída ao criar
-                </label>
-              </div>
-
-              <div class="divider" role="separator" aria-hidden="true"></div>
-
-              <!-- Ações -->
-              <div class="actions">
-                <button class="btn primary" type="submit">Adicionar</button>
-                <a class="btn secondary" href="lista.html" role="button">Cancelar</a>
-              </div>
-            </form>
+        <form class="task-form" action="#" method="post" novalidate>
+          <!-- título -->
+          <div class="field">
+            <label class="sr-only" for="titulo">Título</label>
+            <input id="titulo" name="titulo" type="text"
+                   placeholder="Ex.: Implementar endpoint de ranking"
+                   maxlength="120" required />
+            <small class="helper">Até 120 caracteres.</small>
           </div>
-        </section>
-      </div>
-    </main>
 
-    <footer class="site" role="contentinfo">
-      <div class="container">
-        <p>© 2025 <a href="https://github.com/falk-dev/projeto-v-globotech" target="_blank" rel="noopener">Pythonautas — Academia Globotech</a></p>
-      </div>
-    </footer>
-  </body>
+          <!-- grid com prioridade e responsável -->
+          <div class="grid-2">
+            <div class="field">
+              <label class="sr-only" for="prioridade">Prioridade</label>
+              <select id="prioridade" name="prioridade" aria-label="Prioridade">
+                <option value="alta">Alta</option>
+                <option value="media" selected>Média</option>
+                <option value="baixa">Baixa</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="sr-only" for="responsavel">Responsável</label>
+              <select id="responsavel" name="responsavel" aria-label="Responsável">
+                <option value="" disabled selected>Selecione</option>
+                <option>Alice Ochoa</option>
+                <option>Gabriela Raposo</option>
+                <option>Equipe Pythonautas</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- grid com data limite e tags (opcional; remova se não usar) -->
+          <div class="grid-2">
+            <div class="field">
+              <label class="sr-only" for="dataLimite">Data limite</label>
+              <input id="dataLimite" name="dataLimite" type="date" />
+            </div>
+
+            <div class="field">
+              <label class="sr-only" for="tags">Tags</label>
+              <input id="tags" name="tags" type="text" placeholder="Ex.: backend, spring, bugfix" />
+              <small class="helper">Separe por vírgulas.</small>
+            </div>
+          </div>
+
+          <!-- descrição -->
+          <div class="field">
+            <label class="sr-only" for="descricao">Descrição</label>
+            <textarea id="descricao" name="descricao" rows="4"
+                      placeholder="Detalhes, critérios de aceitação, links, observações..."></textarea>
+          </div>
+
+          <!-- ações -->
+          <div class="actions">
+            <a class="btn secondary" href="dashboard.html" role="button">Cancelar</a>
+            <button class="btn primary" type="submit">Salvar</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- footer global que você já usa -->
+  <footer class="site" role="contentinfo">
+    <div class="container">
+      <p>© 2025 <a href="https://github.com/falk-dev/projeto-v-globotech" target="_blank" rel="noopener">Pythonautas — Academia Globotech</a></p>
+    </div>
+  </footer>
+</body>
 </html>
