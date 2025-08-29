@@ -604,11 +604,7 @@ body .panel--dashboard .dashboard-lists .card.dashboard-list-card > .btn.seconda
   .panel--dashboard .card .btn.secondary:hover{ transform:none; }
 }
 /* ==========================================================================
-   LEGENDA DE PRIORIDADES (limpa, sem fundo, centralizada)
-   --------------------------------------------------------------------------
-   Obs: uso classes em minúsculas. Se o seu HTML estiver com outra grafia
-   (ex.: Legend__List), ajuste o nome das classes lá ou aqui para bater.
-   ========================================================================== */
+   LEGENDA DE PRIORIDADES/
 
 .legend{
   background: transparent;
@@ -624,11 +620,11 @@ body .panel--dashboard .dashboard-lists .card.dashboard-list-card > .btn.seconda
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px 22px;           /* um pouco mais juntinha */
+  gap: 10px 22px;          
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: .88rem;        /* texto da legenda menor */
+  font-size: .88rem;       
   color: #6B7280;
 }
 
@@ -641,16 +637,16 @@ body .panel--dashboard .dashboard-lists .card.dashboard-list-card > .btn.seconda
 }
 
 .legend__badge{
-  display: inline-flex;     /* centraliza perfeitamente */
+  display: inline-flex;     
   align-items: center;
   justify-content: center;
-  min-width: 68px;          /* chips mais compactos */
+  min-width: 68px;          
   height: 26px;
   padding: 0 10px;
   border-radius: 8px;
   font-weight: 700;
-  font-size: .82rem;        /* fonte do chip menor */
-  line-height: 1;           /* evita “subir/descer” do texto */
+  font-size: .82rem;        
+  line-height: 1;           
   color: #fff;
   border: 2px solid transparent;
   box-shadow: 0 1px 0 rgba(0,0,0,.08);
