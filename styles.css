@@ -394,9 +394,6 @@ footer.site a{ color:#6a6ee6; }
   transition:transform .18s ease, filter .18s ease;
 }
 .dashboard-toolbar .btn.primary:hover{ transform:scale(1.04); }
-@media (max-width:480px){
-  .dashboard-toolbar .btn.primary{ width:136px; height:40px; font-size:.9rem; }
-}
 
 /* grade de cards (responsiva) */
 .panel--dashboard .dashboard-lists{
@@ -404,12 +401,6 @@ footer.site a{ color:#6a6ee6; }
   gap:16px;
   grid-template-columns:repeat(3, minmax(0,1fr));
   align-items:stretch;
-}
-@media (max-width:1100px){
-  .panel--dashboard .dashboard-lists{ grid-template-columns:repeat(2,1fr); }
-}
-@media (max-width:640px){
-  .panel--dashboard .dashboard-lists{ grid-template-columns:1fr; }
 }
 
 /* card da lista (estrutura e altura) */
@@ -426,6 +417,7 @@ footer.site a{ color:#6a6ee6; }
   gap:10px;
   padding:16px;
   min-height:220px;
+  min-width:0;
 
   --prio-width:82px; --prio-height:26px; --prio-radius:6px; --prio-font:.80rem;
   --prio-gap:calc(var(--prio-width) + 12px);
@@ -446,6 +438,7 @@ footer.site a{ color:#6a6ee6; }
   color:#111;
   padding-right:var(--prio-gap);
   text-wrap:balance;
+  min-width:0;
 
   display:-webkit-box;
   -webkit-line-clamp:2;
@@ -473,8 +466,7 @@ footer.site a{ color:#6a6ee6; }
   width:82px; height:26px; border-radius:6px;
   display:flex; align-items:center; justify-content:center;
   padding:0 8px; font-size:.80rem; font-weight:800; line-height:1;
-  border:2px solid currentColor;
-  color:#fff;
+  border:2px solid currentColor; color:#fff;
 }
 .badge--baixa{ background:var(--prio-baixa-bg); border-color:var(--prio-baixa-stk); }
 .badge--media{ background:var(--prio-media-bg); border-color:var(--prio-media-stk); }
@@ -521,7 +513,7 @@ footer.site a{ color:#6a6ee6; }
   box-shadow:0 4px 10px rgba(0,0,0,.08);
 }
 
-/* ordem visual por prioridade (sem alterar o HTML) */
+/* ordem visual por prioridade */
 .card.dashboard-list-card[data-prioridade="alta"] {  order:1; }
 .card.dashboard-list-card[data-prioridade="media"]{ order:2; }
 .card.dashboard-list-card[data-prioridade="baixa"]{ order:3; }
@@ -560,4 +552,124 @@ body .panel--dashboard .dashboard-lists .card.dashboard-list-card .dashboard-lis
 body .panel--dashboard .dashboard-lists .card.dashboard-list-card > .btn.secondary{
   margin-top:auto !important; align-self:flex-end !important; text-decoration:none !important;
 }
+
+/* =====================================================================
+   RESPONSIVIDADE — desktop → tablet → mobile
+   ===================================================================== */
+
+/* tablet grande (<= 1100px) */
+@media (max-width:1100px){
+  .panel--dashboard{ padding:20px; }
+  .panel--dashboard .dashboard-lists{ grid-template-columns:repeat(2,1fr); gap:14px; }
+  .panel--dashboard .card.dashboard-list-card{ min-height:210px; }
+}
+
+/* tablet médio (<= 820px) */
+@media (max-width:820px){
+  .dashboard-toolbar{ flex-wrap:wrap; row-gap:8px; }
+  .dashboard-toolbar .btn.primary{ order:2; }
+  .panel--dashboard .card.dashboard-list-card{
+    --prio-width:78px; --prio-height:24px; --prio-font:.78rem;
+  }
+  .badges-inline{ gap:8px; }
+  .badges-inline .meta-link{ font-size:.8rem; }
+  .panel--dashboard .card .btn.secondary{ width:114px; height:38px; font-size:.82rem; }
+}
+
+/* mobile grande (<= 640px) */
+@media (max-width:640px){
+  .panel--dashboard .dashboard-lists{ grid-template-columns:1fr; gap:14px; }
+  .dashboard-toolbar{ flex-direction:column; align-items:flex-start; gap:6px; }
+  .dashboard-toolbar .btn.primary{ align-self:flex-end; }
+  .panel--dashboard .card.dashboard-list-card{
+    padding:14px;
+    --prio-width:74px; --prio-height:24px; --prio-font:.76rem;
+  }
+  .dashboard-list-card__desc{ -webkit-line-clamp:3; min-height:4.6em; }
+}
+
+/* mobile pequeno (<= 420px) */
+@media (max-width:420px){
+  .panel--dashboard{ padding:16px; }
+  .dashboard-toolbar h1{ font-size:1.4rem; }
+  .dashboard-toolbar .subtitle{ font-size:.9rem; }
+  .badges-inline .meta-link{ font-size:.78rem; }
+  .dashboard-toolbar .btn.primary{ width:136px; height:40px; font-size:.9rem; }
+  .panel--dashboard .card .btn.secondary{ width:108px; height:36px; font-size:.8rem; }
+}
+
+/* telas touch: suaviza efeitos de hover */
+@media (hover:none){
+  .panel--dashboard .card.dashboard-list-card:hover{ transform:none; }
+  .panel--dashboard .card .btn.secondary:hover{ transform:none; }
+}
+/* ==========================================================================
+   LEGENDA DE PRIORIDADES (limpa, sem fundo, centralizada)
+   --------------------------------------------------------------------------
+   Obs: uso classes em minúsculas. Se o seu HTML estiver com outra grafia
+   (ex.: Legend__List), ajuste o nome das classes lá ou aqui para bater.
+   ========================================================================== */
+
+.legend{
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  margin-top: 16px;
+  padding: 0;
+}
+.panel + .legend{ margin-top: 16px; }
+
+.legend__list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 22px;           /* um pouco mais juntinha */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: .88rem;        /* texto da legenda menor */
+  color: #6B7280;
+}
+
+.legend__item{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.legend__badge{
+  display: inline-flex;     /* centraliza perfeitamente */
+  align-items: center;
+  justify-content: center;
+  min-width: 68px;          /* chips mais compactos */
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: .82rem;        /* fonte do chip menor */
+  line-height: 1;           /* evita “subir/descer” do texto */
+  color: #fff;
+  border: 2px solid transparent;
+  box-shadow: 0 1px 0 rgba(0,0,0,.08);
+}
+
+/* cores oficiais */
+.legend__badge--baixa{ background:#38b6ff; border-color:#5170ff; }
+.legend__badge--media{ background:#ffbd59; border-color:#ff914d; }
+.legend__badge--alta { background:#ff5757; border-color:#ff3131; }
+
+.legend__text strong{
+  color: #374151;
+  font-weight: 700;
+}
+
+/* mobile */
+@media (max-width: 640px){
+  .legend__list{ gap:8px 14px; font-size:.84rem; }
+  .legend__badge{ min-width:62px; height:24px; padding:0 8px; font-size:.78rem; }
+}
+
 /*========================================================================================================================*/
