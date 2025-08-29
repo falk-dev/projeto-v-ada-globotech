@@ -4,6 +4,8 @@ Este repositório contém a implementação do projeto **Sistema de Controle de 
 
 O objetivo é criar um programa web que permita a **gestão de usuários, listas de tarefas e suas respectivas atividades**, praticando a estruturação de páginas, navegação entre telas, estilização e responsividade.
 
+![Capa do projeto V com os logos da Ada e da Globo ao topo, fundo gradiente roxo-azul e o botão “Grupo Pythonautas”](imagens/apresentacao.jpg)
+
 ---
 
 ## 🎯 Objetivos do Projeto
@@ -61,6 +63,21 @@ Os seguintes pontos serão considerados:
 - Navegação entre telas
 - Responsividade
 - Clareza e organização do código
+
+---
+
+## 📑 Apresentação & Review
+Abaixo você encontra os slides que apresentamos durante nossa entrega: a introdução, seguida da organização e metologia, após isso, do visual à implementação do código, os principais desafios que enfrentamos e, por fim, nossos agradecimentos.
+
+![Introdução do Projeto 5](imagens/introducao.jpg)
+
+![Organização e Metodologia](imagens/organizacao.jpg)
+
+![Do visual à Implementação](imagens/visual.jpg)
+
+![Desafios e aprendizados](imagens/desafios.jpg)
+
+![Slide de agradecimento com os logos da Ada e da Globo, fundo gradiente roxo-azul e o texto “Obrigado” centralizado](imagens/obrigado.jpg)
 
 ---
 
