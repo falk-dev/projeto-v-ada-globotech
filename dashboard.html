@@ -1,41 +1,109 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pythonautas Launchpad</title>
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site" role="banner">
-      <div class="container">
-        <a class="brand" href="index.html" aria-label="Minhas Listas - Pythonautas Launchpad">
-          <img class="logo" src="assets/logo.svg" alt="Pythonautas Launchpad" />
-          <div class="brand-text">
-            <strong class="title">Pythonautas Launchpad</strong>
-            <span class="tagline">PAINEL DE TAREFAS &amp; CONTROLE DE MISSÕES</span>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minhas Listas — Pythonautas Launchpad</title>
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site" role="banner">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Página inicial — Pythonautas Launchpad">
+        <img class="logo" src="assets/logo.svg" alt="Pythonautas Launchpad" />
+        <div class="brand-text">
+          <strong class="title">Pythonautas Launchpad</strong>
+          <span class="tagline">PAINEL DE TAREFAS &amp; CONTROLE DE MISSÕES</span>
+        </div>
+      </a>
+
+      <nav aria-label="Menu principal">
+
+        <ul class="navv">
+          <li><a href="index.html">Sair</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="site-main">
+    <div class="container">
+
+      <section class="dashboard-header">
+        <h1>Minhas listas</h1>
+        <h3>Gerencie suas listas de tarefas.</h3>
+      </section>
+
+      <div class="dashboard-actions">
+        <a class="btn primary dashboard-actions__btn" href="nova-lista.html">Nova lista</a>
+      </div>
+
+      <!-- Grade de cards (DUPLIQUE <article> para novas listas) -->
+      <section class="dashboard-lists" aria-label="Listas de tarefas">
+
+        <!-- CARD 1 -->
+        <article class="card dashboard-list-card"
+                 data-total="4" data-pendentes="1" data-concluidas="3" data-prioridade="media">
+          <h2 class="dashboard-list-card__title">
+            <a href="lista.html">Compras</a>
+          </h2>
+
+          <div class="dashboard-list-card__badges">
+            <span class="badge badge--total">4 tarefas</span>
+            <span class="badge badge--pendentes">1 pendente</span>
+            <span class="badge badge--concluidas">3 concluídas</span>
           </div>
-        </a>
-        <nav aria-label="primária">
-          <ul class="nav">
-            <li><a href="index.html" aria-current="page">Sair</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
 
-    <main id="conteudo" class="site-main">
-      <div class="container">
-        <h1>Minhas Listas</h1>
-        <!-- CONTEÚDO ESPECÍFICO DA PÁGINA -->
-      </div>
-    </main>
+          <p class="dashboard-list-card__desc">Itens necessários para o escritório.</p>
+          <a class="btn secondary" href="lista.html">Ver lista</a>
+        </article>
 
-    <footer class="site" role="contentinfo">
-      <div class="container">
-        <p>© 2025 <a href="https://github.com/falk-dev/projeto-v-globotech" target="_blank" rel="noopener">Pythonautas — Academia Globotech</a></p>
-      </div>
-    </footer>
-  </body>
+        <!-- CARD 2 -->
+        <article class="card dashboard-list-card"
+                 data-total="2" data-pendentes="1" data-concluidas="1" data-prioridade="baixa">
+          <h2 class="dashboard-list-card__title">
+            <a href="lista.html">Leituras</a>
+          </h2>
+
+          <div class="dashboard-list-card__badges">
+            <span class="badge badge--total">2 tarefas</span>
+            <span class="badge badge--pendentes">1 pendente</span>
+            <span class="badge badge--concluidas">1 concluída</span>
+          </div>
+
+          <p class="dashboard-list-card__desc">Artigos sobre desenvolvimento de software.</p>
+          <a class="btn secondary" href="lista.html">Ver lista</a>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="card dashboard-list-card"
+                 data-total="6" data-pendentes="4" data-concluidas="2" data-prioridade="alta">
+          <h2 class="dashboard-list-card__title">
+            <a href="lista.html">Projeto V — Python</a>
+          </h2>
+
+          <div class="dashboard-list-card__badges">
+            <span class="badge badge--total">6 tarefas</span>
+            <span class="badge badge--pendentes">4 pendentes</span>
+            <span class="badge badge--concluidas">2 concluídas</span>
+          </div>
+
+          <p class="dashboard-list-card__desc">Pipeline em Python com condicionais e CSV em memória.</p>
+          <a class="btn secondary" href="lista.html">Ver lista</a>
+        </article>
+
+      </section>
+    </div>
+  </main>
+
+  <footer class="site" role="contentinfo">
+    <div class="container">
+      <p>© 2025 <a href="https://github.com/falk-dev/projeto-v-globotech" target="_blank" rel="noopener">Pythonautas — Academia Globotech</a></p>
+    </div>
+  </footer>
+
+</body>
 </html>
